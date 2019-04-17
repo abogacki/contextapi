@@ -11,6 +11,9 @@ import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
 import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
 
 
+//
+import UserName from "../components/UserName";
+
 const styles = {
   root: {
     flexGrow: 1,
@@ -30,11 +33,21 @@ function ButtonAppBar(props) {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton className={classes.menuButton} color="inherit" aria-label="Menu">
+          <IconButton
+            className={classes.menuButton}
+            color="inherit"
+            aria-label="Menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" color="inherit" className={classes.grow}>
+          <Typography
+            variant="h6"
+            color="inherit"
+            className={classes.grow}>
             Context API example
+          </Typography>
+          <Typography variant="h5" color="inherit">
+            {/* UserName Component */}
+            <UserName />
           </Typography>
           <IconButton color="secondary">
             <AccessAlarmIcon />
@@ -42,7 +55,11 @@ function ButtonAppBar(props) {
           <IconButton color="secondary">
             <ThreeDRotation />
           </IconButton>
-          <Button color="inherit" onClick={props.changeTheme}>Change Theme</Button>
+          <Button
+            color="inherit"
+            onClick={props.changeTheme}>
+            Change Theme
+          </Button>
         </Toolbar>
       </AppBar>
     </div>

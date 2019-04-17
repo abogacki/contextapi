@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core';
+import { withStyles, Avatar } from '@material-ui/core';
+import { UserContext } from '../contexts/userContext'
 
 
 const styles = theme => ({
@@ -9,16 +10,26 @@ const styles = theme => ({
         padding: theme.spacing.unit * 6,
         color: theme.palette.primary.contrastText
     },
+    avatar: {
+        margin: 10,
+    }
 })
 
-const Footer = ({ classes }) => <footer className={classes.footer}>
-    <Typography variant="h6" align="center" gutterBottom>
-        Footer
-</Typography>
-    <Typography variant="subtitle1" align="center" color="textSecondary" component="p">
-        Something here to give the footer a purpose!
-</Typography>
-</footer>
+const Footer = ({ classes }) => {
+    const { name, surname } = useContext(UserContext)
+    return (<footer className={classes.footer} >
+        <Typography variant="h6" align="center" color="inherit" gutterBottom>
+            Footer
+        </Typography>
+        <Typography variant="subtitle1" align="center" color="inherit" component="p">
+            And in footer the user is {`${name} ${surname}`}
+        </Typography>
+            <Avatar align="center" alt={name + surname} src="https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg" className={classes.avatar} />
+        <Typography variant="subtitle2" align="center">
+            Created with Material UI
+        </Typography>
+    </footer>)
+}
 
 
 export default withStyles(styles)(Footer)
