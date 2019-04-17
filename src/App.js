@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 const user={
   name: 'John',
   surname: 'Doe',
+  avatar: 'https://i.ytimg.com/vi/SfLV8hD7zX4/maxresdefault.jpg'
 }
 
 const App = () => {
