@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { MuiThemeProvider } from '@material-ui/core/styles';
-import { darkTheme, lightTheme } from './contexts/themeContext'
+import { darkTheme, lightTheme } from './themes/themes'
 import NavBar from './components/NavBar'
 import Content from './components/Content'
+import Footer from './components/Footer'
 
 const App = () => {
   const [theme, setTheme] = useState(lightTheme)
@@ -18,7 +19,8 @@ const App = () => {
   return (
     <MuiThemeProvider theme={theme}>
       <NavBar changeTheme={changeTheme} />
-      <Content changeTheme={changeTheme} />
+      <Content />
+      <Footer />
     </MuiThemeProvider>)
 }
 

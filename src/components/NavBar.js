@@ -7,6 +7,9 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
+import AccessAlarmIcon from '@material-ui/icons/AccessAlarm';
+import ThreeDRotation from '@material-ui/icons/ThreeDRotation';
+
 
 const styles = {
   root: {
@@ -31,8 +34,14 @@ function ButtonAppBar(props) {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" color="inherit" className={classes.grow}>
-            News
+            Context API example
           </Typography>
+          <IconButton color="secondary">
+            <AccessAlarmIcon />
+          </IconButton>
+          <IconButton color="secondary">
+            <ThreeDRotation />
+          </IconButton>
           <Button color="inherit" onClick={props.changeTheme}>Change Theme</Button>
         </Toolbar>
       </AppBar>
