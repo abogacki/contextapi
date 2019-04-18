@@ -5,7 +5,7 @@ import {UserContext} from '../contexts/userContext'
 // example using useContext hook
 const UserName = () => {
     const user = useContext(UserContext)
-    console.log(user);
+    // console.log(user);
     
     return (
         <>

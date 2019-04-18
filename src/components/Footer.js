@@ -16,7 +16,9 @@ const styles = theme => ({
 })
 
 const Footer = ({ classes }) => {
+    
     const { name, surname, avatar } = useContext(UserContext)
+
     return (<footer className={classes.footer} >
         <Typography variant="h6" align="center" color="inherit" gutterBottom>
             Footer
